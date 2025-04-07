@@ -2,11 +2,19 @@ package com.bessa.cadastroDeNinjas.ninjas;
 
 import com.bessa.cadastroDeNinjas.missaoes.MissaoesModel;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.List;
 
 @Entity
 @Table(name = "tb_cadastro_de_ninjas")
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class NinjaModel {
     @Id
             @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,36 +27,6 @@ public class NinjaModel {
     @JoinColumn(name = "missoes_id")
     private MissaoesModel missaoes;
 
-    public NinjaModel() {
-    }
 
-    public NinjaModel(String nome, String email, int idade) {
-        this.nome = nome;
-        this.email = email;
-        this.idade = idade;
-    }
 
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public int getIdade() {
-        return idade;
-    }
-
-    public void setIdade(int idade) {
-        this.idade = idade;
-    }
 }
