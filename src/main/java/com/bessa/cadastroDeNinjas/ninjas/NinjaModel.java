@@ -1,6 +1,9 @@
-package com.bessa.cadastroDeNinjas;
+package com.bessa.cadastroDeNinjas.ninjas;
 
+import com.bessa.cadastroDeNinjas.missaoes.MissaoesModel;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "tb_cadastro_de_ninjas")
@@ -11,6 +14,10 @@ public class NinjaModel {
      private String nome;
      private String email;
     private int idade;
+
+    @ManyToOne
+    @JoinColumn(name = "missoes_id")
+    private MissaoesModel missaoes;
 
     public NinjaModel() {
     }
