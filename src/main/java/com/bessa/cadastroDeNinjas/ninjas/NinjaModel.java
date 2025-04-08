@@ -10,7 +10,7 @@ import lombok.Setter;
 import java.util.List;
 
 @Entity
-@Table(name = "tb_cadastro_de_ninjas")
+@Table(name = "tb_cadastro")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
