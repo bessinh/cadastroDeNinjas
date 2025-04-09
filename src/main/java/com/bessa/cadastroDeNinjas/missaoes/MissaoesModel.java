@@ -1,6 +1,7 @@
 package com.bessa.cadastroDeNinjas.missaoes;
 
 import com.bessa.cadastroDeNinjas.ninjas.NinjaModel;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,5 +23,6 @@ public class MissaoesModel {
   private String nome;
   private String dificuldade;
   @OneToMany(mappedBy = "missoes")
+  @JsonIgnore  // tira o loop infinito
   private List <NinjaModel> ninjas;
 }

@@ -1,14 +1,48 @@
 package com.bessa.cadastroDeNinjas.ninjas;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping
 public class Controller {
- @GetMapping("/boasVindas")
-    public String boasVindas(){
-     return "Seja bem vindo";
- }
+    private NinjaService ninjaService;
+
+    public Controller(NinjaService ninjaService) {
+        this.ninjaService = ninjaService;
+    }
+
+    @GetMapping("/boasVindas")
+    public String boasVindas() {
+        return "Seja bem vindo";
+    }
+
+    @PostMapping("/criar")
+    public String criarNinja() {
+        return "ninja criar";
+    }
+
+    @GetMapping("/all")
+    public List<NinjaModel> listarNinjas() {
+        return ninjaService.listarTodos();
+    }
+
+    @GetMapping("/id")
+    public String verNinjasPorId() {
+        return "Ver ninjas por id";
+    }
+
+    @PutMapping("/id")
+    public String atualizarNinjasPorId() {
+        return "atualizar ninjas por id";
+    }
+
+
+    @DeleteMapping("/id")
+    public String deletarNinjasPorId() {
+        return "atualizar ninjas por id";
+    }
+
+
 }
