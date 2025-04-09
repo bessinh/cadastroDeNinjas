@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping
+@RequestMapping("/ninjas")
 public class Controller {
     private NinjaService ninjaService;
 
@@ -28,9 +28,9 @@ public class Controller {
         return ninjaService.listarTodos();
     }
 
-    @GetMapping("/id")
-    public String verNinjasPorId() {
-        return "Ver ninjas por id";
+    @GetMapping("/listar/{id}")
+    public NinjaModel verNinjasPorId(@PathVariable Long id) {
+        return ninjaService.listarPorId(id);
     }
 
     @PutMapping("/id")
