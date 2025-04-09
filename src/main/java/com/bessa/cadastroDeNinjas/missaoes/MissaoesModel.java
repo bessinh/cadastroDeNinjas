@@ -22,6 +22,7 @@ public class MissaoesModel {
   private Long id;
   private String nome;
   private String dificuldade;
+
   @OneToMany(mappedBy = "missoes")
   @JsonIgnore  // tira o loop infinito
   private List <NinjaModel> ninjas;
