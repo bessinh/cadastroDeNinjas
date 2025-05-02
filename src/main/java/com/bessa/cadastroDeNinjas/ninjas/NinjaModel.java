@@ -21,9 +21,11 @@ public class NinjaModel {
     private Long id;
      private String nome;
      private String imgUrl;
+     private String rank;
      @Column(unique = true)
      private String email;
     private int idade;
+
 
     @ManyToOne
     @JoinColumn(name = "missoes_id")
